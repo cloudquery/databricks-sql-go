@@ -3,7 +3,7 @@ module github.com/databricks/databricks-sql-go
 go 1.21
 
 require (
-	github.com/apache/arrow/go/v16 v16.1.0
+	github.com/apache/arrow/go/v17 v17.0.0
 	github.com/apache/thrift v0.20.0
 	github.com/coreos/go-oidc/v3 v3.11.0
 	github.com/hashicorp/go-retryablehttp v0.7.7
