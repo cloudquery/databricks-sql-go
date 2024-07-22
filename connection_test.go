@@ -163,7 +163,9 @@ func TestConn_executeStatement(t *testing.T) {
 		for _, opTest := range operationStateTests {
 			closeOperationCount = 0
 			executeStatementCount = 0
+			//nolint:gosec
 			executeStatementResp.DirectResults.OperationStatus.OperationState = &opTest.state
+			//nolint:gosec
 			executeStatementResp.DirectResults.OperationStatus.DisplayMessage = &opTest.err
 			_, err := testConn.ExecContext(context.Background(), "select 1", []driver.NamedValue{})
 			if opTest.err == "" {
