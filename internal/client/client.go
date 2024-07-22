@@ -270,6 +270,7 @@ func InitThriftClient(cfg *config.Config, httpclient *http.Client) (*ThriftServi
 		return nil, dbsqlerrint.NewRequestError(context.TODO(), fmt.Sprintf("invalid protocol specified %s", cfg.ThriftProtocol), nil)
 	}
 	if cfg.ThriftDebugClientProtocol {
+		//nolint:staticcheck
 		protocolFactory = thrift.NewTDebugProtocolFactoryWithLogger(protocolFactory, "client:", thrift.StdLogger(nil))
 	}
 
