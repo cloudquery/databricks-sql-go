@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/arrow/go/v17/arrow"
-	"github.com/apache/arrow/go/v17/arrow/array"
+	"github.com/apache/arrow-go/v18/arrow"
+	"github.com/apache/arrow-go/v18/arrow/array"
 	dbsqlerr "github.com/databricks/databricks-sql-go/errors"
 	"github.com/databricks/databricks-sql-go/internal/cli_service"
 	"github.com/databricks/databricks-sql-go/internal/config"
@@ -1065,7 +1065,7 @@ func TestArrowRowScanner(t *testing.T) {
 		for i := int64(0); i < ars.NRows(); i = i + 1 {
 			err := ars.ScanRow(dest, i)
 			assert.Nil(t, err)
-			assert.Equal(t, int32(i+1), dest[0])
+			assert.Equal(t, int32(i+1), dest[0]) //nolint:gosec
 
 			if i%1000 == 0 {
 				assert.NotNil(t, ars.currentBatch)

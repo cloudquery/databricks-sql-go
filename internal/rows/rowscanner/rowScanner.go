@@ -45,7 +45,7 @@ func IsNull(nulls []byte, position int64) bool {
 	index := position / 8
 	if int64(len(nulls)) > index {
 		b := nulls[index]
-		return (b & (1 << (uint)(position%8))) != 0
+		return (b & (1 << (uint)(position%8))) != 0 //nolint:gosec
 	}
 	return false
 }
