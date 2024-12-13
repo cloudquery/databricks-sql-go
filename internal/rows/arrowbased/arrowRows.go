@@ -684,7 +684,7 @@ func (vcm *arrowValueContainerMaker) makeColumnValueContainer(t arrow.DataType, 
 		return nullContainer, nil
 
 	default:
-		return nil, errors.Errorf(errArrowRowsUnhandledArrowType(t.String()))
+		return nil, errors.New(errArrowRowsUnhandledArrowType(t.String()))
 	}
 }
 
