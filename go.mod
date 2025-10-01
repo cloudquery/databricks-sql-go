@@ -8,7 +8,7 @@ require (
 	github.com/apache/arrow-go/v18 v18.0.0
 	github.com/apache/thrift v0.21.0
 	github.com/coreos/go-oidc/v3 v3.11.0
-	github.com/hashicorp/go-retryablehttp v0.7.7
+	github.com/hashicorp/go-retryablehttp v0.7.8
 	github.com/joho/godotenv v1.4.0
 	github.com/mattn/go-isatty v0.0.20
 	github.com/pierrec/lz4/v4 v4.1.21
