@@ -2,7 +2,6 @@ package arrowbased
 
 import (
 	"encoding/json"
-	"strings"
 	"time"
 
 	"github.com/apache/arrow-go/v18/arrow"
