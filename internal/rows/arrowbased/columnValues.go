@@ -297,11 +297,12 @@ func (mvc *mapValueContainer) Value(i int) (any, error) {
 				b = string(vb)
 			}
 
-			if !strings.HasPrefix(string(key), "\"") {
-				r = r + "\"" + string(key) + "\":"
-			} else {
-				r = r + string(key) + ":"
+			// Always JSON-encode the key to ensure proper quoting/escaping
+			encodedKey, err := json.Marshal(k)
+			if err != nil {
+				return nil, err
 			}
+			r = r + string(encodedKey) + ":"
 
 			r = r + b
 			if i < len-1 {
