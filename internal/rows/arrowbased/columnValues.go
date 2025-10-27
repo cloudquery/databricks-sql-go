@@ -543,8 +543,7 @@ func (tvc *decimal128Container) SetValueArray(colData arrow.ArrayData) error {
 
 func marshal(val any) ([]byte, error) {
 	if t, ok := val.(time.Time); ok {
-		s := "\"" + t.String() + "\""
-		return []byte(s), nil
+		return json.Marshal(t.String())
 	}
 	vb, err := json.Marshal(val)
 	return vb, err
